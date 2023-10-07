@@ -4,20 +4,12 @@ using System.Net;
 namespace Entidades
 {
 
-    //Enumerador
-    public enum ESistema
-    {
-        Binario,
-        Decimal,
-        Octal
-    }
-
     public abstract class Numeracion
     {
 
         //Atributos
         protected static string msgError;
-        protected string valor;
+        protected string valor = "";
 
         //Constructores
         static Numeracion()
@@ -27,7 +19,7 @@ namespace Entidades
 
         protected Numeracion(string valor)
         {
-            this.valor = valor;//Regresar
+            InicializaValor(valor);
         }
 
         //Propiedades
@@ -39,52 +31,24 @@ namespace Entidades
             }
         }
 
-        internal abstract string ValorNumerico
+        internal abstract double ValorNumerico
         {
             get;
         }
 
-        //Metodos
-        protected bool esNumeracionValida(string valor)
-        {
-            return !string.IsNullOrWhiteSpace(valor);
-        }
-
-        private void InicializaValor(string valor)
-        {
-            if (esNumeracionValida(valor))
-            {
-                this.valor = valor;
-            }
-            else
-            {
-                this.valor = "Numero Invalido";
-            }
-        }
-
+        //Sobrecargas
         public static bool operator ==(Numeracion n1, Numeracion n2)
         {
-            if (n1 is null || n2 is null) 
+            if (n1 is null || n2 is null)
             {
                 return false;
             }
-            return n1.GetType() == n2.GetType(); 
+            return n1.GetType() == n2.GetType();
         }
 
         public static bool operator !=(Numeracion n1, Numeracion n2)
         {
             return !(n1 == n2);
-        }
-
-        public override bool Equals(object? obj)
-        {
-            Numeracion? numeracion = obj as Numeracion;
-            return numeracion is not null && this == numeracion;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
 
         public static explicit operator double(Numeracion numeracion)
@@ -93,7 +57,40 @@ namespace Entidades
             {
                 return esNumerico;
             }
-            return 0d;
+            return double.NaN;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Numeracion numeracion &&
+                   valor == numeracion.valor &&
+                   Valor == numeracion.Valor &&
+                   ValorNumerico == numeracion.ValorNumerico;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(valor, Valor, ValorNumerico);
+        }
+
+        //Metodos
+        public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema);
+
+        protected virtual bool EsNumeracionValida(string valor)
+        {
+            return !string.IsNullOrWhiteSpace(valor);
+        }
+
+        private void InicializaValor(string valor)
+        {
+            if (EsNumeracionValida(valor))
+            {
+                this.valor = valor;
+            }
+            else
+            {
+                this.valor = "Numero Invalido";
+            }
         }
 
     }

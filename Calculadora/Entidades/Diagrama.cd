@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entidades.Numeracion">
+    <Position X="5.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgADAABAAAAAAAAAgAAAAQAEAgAABIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Numeracion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.SistemaBinario">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAJAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAABAAIA=</HashCode>
+      <FileName>SistemaBinario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.SistemaDecimal">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAJAAAAAAAAAAAAAAAgAQAAAAAAAAAIAAAAAAAQ=</HashCode>
+      <FileName>SistemaDecimal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Entidades.ESistema">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAACAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ESistema.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

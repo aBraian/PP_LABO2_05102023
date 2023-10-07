@@ -11,21 +11,35 @@ namespace Entidades
 {
     public class SistemaDecimal : Numeracion
     {
+
+        //Constructor
         public SistemaDecimal(string valor) : base(valor)
         {
+
         }
 
-        internal override string ValorNumerico
+        //Propiedades
+        internal override double ValorNumerico
         {
             get
             {
-                return valor;
+                return (double)this;
             }
         }
 
-        protected bool EsNumeracionValida(string valor)
+        //Metodos
+        public override Numeracion CambiarSistemaDeNumeracion(ESistema sistema)
         {
-            if (!string.IsNullOrEmpty(valor) && EsSistemaDecimalValido(valor))
+            switch (sistema)
+            {
+                case ESistema.Binario:
+                case ESistema.Octal:
+            }
+        }
+
+        protected override bool EsNumeracionValida(string valor)
+        {
+            if (base.EsNumeracionValida(valor) && !string.IsNullOrEmpty(valor) && EsSistemaDecimalValido(valor))
             {
                 return true;
             }
@@ -34,12 +48,25 @@ namespace Entidades
 
         private bool EsSistemaDecimalValido(string valor)
         {
-            return double.TryParse(valor, out double _);
+            return double.TryParse(valor, out _);
         }
 
         private SistemaBinario DecimalABinario()
         {
-
+            if (this.ValorNumerico > 0)
+            {
+                int parteEntera = (int)Math.Floor(this.ValorNumerico);
+                int resto;
+                string numeroBinario = "";
+                while (parteEntera != 0)
+                {
+                    resto = parteEntera % 2;
+                    numeroBinario = resto.ToString() + numeroBinario;
+                    parteEntera /= 2;
+                }
+                return new SistemaBinario(numeroBinario);
+            }
+            return new SistemaBinario(msgError);
         }
 
         private SistemaOctal DecimalAOctal()
