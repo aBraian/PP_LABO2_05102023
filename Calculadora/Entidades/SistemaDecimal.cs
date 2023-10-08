@@ -33,8 +33,11 @@ namespace Entidades
             switch (sistema)
             {
                 case ESistema.Binario:
+                    return DecimalABinario();
                 case ESistema.Octal:
+                    return DecimalAOctal();
             }
+            return this;
         }
 
         protected override bool EsNumeracionValida(string valor)
@@ -71,10 +74,24 @@ namespace Entidades
 
         private SistemaOctal DecimalAOctal()
         {
-
+            if (this.ValorNumerico > 0)
+            {
+                int parteEntera = (int)Math.Floor(this.ValorNumerico);
+                int resto;
+                string numeroOctal = "";
+                while (parteEntera != 0)
+                {
+                    resto = parteEntera % 8;
+                    numeroOctal = resto.ToString() + numeroOctal;
+                    parteEntera /= 8;
+                }
+                return new SistemaOctal(numeroOctal);
+            }
+            return new SistemaOctal(msgError);
         }
 
-        public static implicit operator SistemaDecimal(double valor)
+        //Sobrecargas
+        public static implicit operator SistemaDecimal(double valor) 
         {
             return new SistemaDecimal(valor.ToString());
         }

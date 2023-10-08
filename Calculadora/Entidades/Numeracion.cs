@@ -35,6 +35,26 @@ namespace Entidades
         {
             get;
         }
+        
+        //Metodos
+        public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema);
+
+        protected virtual bool EsNumeracionValida(string valor)
+        {
+            return !string.IsNullOrWhiteSpace(valor);
+        }
+
+        private void InicializaValor(string valor)
+        {
+            if (EsNumeracionValida(valor))
+            {
+                this.valor = valor;
+            }
+            else
+            {
+                this.valor = "Numero Invalido";
+            }
+        }
 
         //Sobrecargas
         public static bool operator ==(Numeracion n1, Numeracion n2)
@@ -71,26 +91,6 @@ namespace Entidades
         public override int GetHashCode()
         {
             return HashCode.Combine(valor, Valor, ValorNumerico);
-        }
-
-        //Metodos
-        public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema);
-
-        protected virtual bool EsNumeracionValida(string valor)
-        {
-            return !string.IsNullOrWhiteSpace(valor);
-        }
-
-        private void InicializaValor(string valor)
-        {
-            if (EsNumeracionValida(valor))
-            {
-                this.valor = valor;
-            }
-            else
-            {
-                this.valor = "Numero Invalido";
-            }
         }
 
     }
