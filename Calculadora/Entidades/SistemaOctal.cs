@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class SistemaBinario : Numeracion
+    public class SistemaOctal : Numeracion
     {
 
         //Constructor
-        public SistemaBinario(string valor) : base(valor)
+        public SistemaOctal(string valor) : base(valor)
         {
 
         }
@@ -31,25 +30,25 @@ namespace Entidades
             switch (sistema)
             {
                 case ESistema.Decimal:
-                    return BinarioADecimal();
+                    return OctalADecimal();
             }
             return this;
         }
 
         protected override bool EsNumeracionValida(string valor)
         {
-            if (base.EsNumeracionValida(valor) && !string.IsNullOrEmpty(valor) && EsSistemaBinarioValido(valor))
+            if (base.EsNumeracionValida(valor) && !string.IsNullOrEmpty(valor) && EsSistemaOctalValido(valor))
             {
                 return true;
             }
             return false;
         }
 
-        private bool EsSistemaBinarioValido(string valor)
+        private bool EsSistemaOctalValido(string valor)
         {
             foreach (char digito in valor)
             {
-                if (digito != '0' && digito != '1')
+                if (digito < '0' || digito > '7')
                 {
                     return false;
                 }
@@ -57,7 +56,7 @@ namespace Entidades
             return true;
         }
 
-        private SistemaDecimal BinarioADecimal()
+        private SistemaDecimal OctalADecimal()
         {
             SistemaDecimal numeroDecimal;
             if (Valor != msgError && EsNumeracionValida(Valor))
@@ -66,23 +65,23 @@ namespace Entidades
                 double conversionADecimal = 0;
                 for (int i = Valor.Length - 1; i >= 0; i--)
                 {
-                    double.TryParse(Valor[i].ToString(), out double numeroBinario);
-                    conversionADecimal += numeroBinario * Math.Pow(2, posicion);
+                    double.TryParse(Valor[i].ToString(), out double numeroOctal);
+                    conversionADecimal += numeroOctal * Math.Pow(8, posicion);
                     posicion++;
                 }
                 numeroDecimal = conversionADecimal;
             }
             else
             {
-                numeroDecimal = Double.MinValue;
+                numeroDecimal = double.MinValue;
             }
             return numeroDecimal;
         }
 
         //Sobrecargas
-        public static implicit operator SistemaBinario(string valor)
+        public static implicit operator SistemaOctal(string valor)
         {
-            return new SistemaBinario(valor);
+            return new SistemaOctal(valor);
         }
 
     }

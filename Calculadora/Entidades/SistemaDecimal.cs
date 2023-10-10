@@ -7,7 +7,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace Entidades 
 {
     public class SistemaDecimal : Numeracion
     {
@@ -18,7 +18,7 @@ namespace Entidades
 
         }
 
-        //Propiedades
+        //Propiedad
         internal override double ValorNumerico
         {
             get
@@ -90,7 +90,7 @@ namespace Entidades
             return new SistemaOctal(msgError);
         }
 
-        //Sobrecargas
+        //Sobrecargas   
         public static implicit operator SistemaDecimal(double valor) 
         {
             return new SistemaDecimal(valor.ToString());
