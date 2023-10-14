@@ -1,0 +1,11 @@
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\bin\Debug\net7.0\Entidades.deps.json
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\bin\Debug\net7.0\Entidades.dll
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\bin\Debug\net7.0\Entidades.pdb
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\Entidades.AssemblyInfo.cs
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\Entidades.dll
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\refint\Entidades.dll
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\Entidades.pdb
+C:\Users\braia\OneDrive\Escritorio\Carpetas\UTN\2023\2do_Cuatrimestre_UTN\Programacion II - Laboratorio II\PP_LABO2_05102023\Calculadora\Entidades\obj\Debug\net7.0\ref\Entidades.dll

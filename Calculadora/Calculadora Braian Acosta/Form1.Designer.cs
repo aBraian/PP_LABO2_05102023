@@ -66,6 +66,7 @@
             rdbBinario.TabStop = true;
             rdbBinario.Text = "Binario";
             rdbBinario.UseVisualStyleBackColor = true;
+            rdbBinario.CheckedChanged += rdbBinario_CheckedChanged;
             // 
             // rdbDecimal
             // 
@@ -77,6 +78,7 @@
             rdbDecimal.TabStop = true;
             rdbDecimal.Text = "Decimal";
             rdbDecimal.UseVisualStyleBackColor = true;
+            rdbDecimal.CheckedChanged += rdbDecimal_CheckedChanged;
             // 
             // rdbOctal
             // 
@@ -88,6 +90,7 @@
             rdbOctal.TabStop = true;
             rdbOctal.Text = "Octal";
             rdbOctal.UseVisualStyleBackColor = true;
+            rdbOctal.CheckedChanged += rdbOctal_CheckedChanged;
             // 
             // lblPrimerOperando
             // 
@@ -132,6 +135,7 @@
             // 
             // cmbOperacion
             // 
+            cmbOperacion.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbOperacion.FormattingEnabled = true;
             cmbOperacion.Location = new Point(280, 381);
             cmbOperacion.Name = "cmbOperacion";
@@ -146,6 +150,7 @@
             btnOperar.TabIndex = 10;
             btnOperar.Text = "Operar";
             btnOperar.UseVisualStyleBackColor = true;
+            btnOperar.Click += btnOperar_Click;
             // 
             // btnLimpiar
             // 
@@ -155,6 +160,7 @@
             btnLimpiar.TabIndex = 11;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnCerrar
             // 
@@ -180,7 +186,7 @@
             // lblHistorial
             // 
             lblHistorial.AutoSize = true;
-            lblHistorial.Location = new Point(829, 50);
+            lblHistorial.Location = new Point(927, 50);
             lblHistorial.Name = "lblHistorial";
             lblHistorial.Size = new Size(120, 27);
             lblHistorial.TabIndex = 14;
@@ -192,14 +198,14 @@
             lstHistorial.ItemHeight = 27;
             lstHistorial.Location = new Point(725, 118);
             lstHistorial.Name = "lstHistorial";
-            lstHistorial.Size = new Size(308, 382);
+            lstHistorial.Size = new Size(517, 382);
             lstHistorial.TabIndex = 15;
             // 
             // frmCalculadora
             // 
             AutoScaleDimensions = new SizeF(12F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1062, 553);
+            ClientSize = new Size(1266, 553);
             Controls.Add(lstHistorial);
             Controls.Add(lblHistorial);
             Controls.Add(grpSistema);
@@ -221,6 +227,9 @@
             Name = "frmCalculadora";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculadora Braian Acosta";
+            FormClosing += frmCalculadora_FormClosing;
+            FormClosed += frmCalculadora_FormClosed;
+            Load += frmCalculadora_Load;
             grpSistema.ResumeLayout(false);
             grpSistema.PerformLayout();
             ResumeLayout(false);

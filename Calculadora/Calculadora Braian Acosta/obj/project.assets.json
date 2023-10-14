@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0-windows7.0": {}
+    "net7.0-windows7.0": {
+      "Entidades/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0-windows7.0": []
+    "net7.0-windows7.0": [
+      "Entidades >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\braia\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\braia\\OneDrive\\Escritorio\\Carpetas\\UTN\\2023\\2do_Cuatrimestre_UTN\\Programacion II - Laboratorio II\\PP_LABO2_05102023\\Calculadora\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\braia\\OneDrive\\Escritorio\\Carpetas\\UTN\\2023\\2do_Cuatrimestre_UTN\\Programacion II - Laboratorio II\\PP_LABO2_05102023\\Calculadora\\Entidades\\Entidades.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
